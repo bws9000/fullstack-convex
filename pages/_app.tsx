@@ -47,8 +47,8 @@ function MyApp({ Component, pageProps, authDomain, authClient }: AppPropsWithLay
 }
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
-  const authDomain = process.env.NEXT_PUBLIC_AUTH_DOMAIN || process.env.AUTH0_DOMAIN;
-  const authClient = process.env.NEXT_PUBLIC_AUTH_CLIENT || process.env.AUTH0_CLIENT_ID;
+  const authDomain = process.env.NEXT_PUBLIC_AUTH_DOMAIN || process.env.AUTH0_DOMAIN as string;
+  const authClient = process.env.NEXT_PUBLIC_AUTH_CLIENT || process.env.AUTH0_CLIENT_ID as string;
 
   if (!authDomain) {
     throw new Error('Auth domain not found');
